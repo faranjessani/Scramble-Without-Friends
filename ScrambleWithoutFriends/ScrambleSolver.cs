@@ -3,20 +3,20 @@ using System.Linq;
 
 namespace ScrambleWithoutFriends
 {
-    internal class ScrambleSolver : IScrambleSolver
+    internal class ScrambleSolver : ScrambleSolverBase
     {
         private IList<string> _possibleWords;
         private WordNode _rootNode;
         private ScrambleBoard _scrambleBoard;
 
-        public ScrambleSolver(IScrambleDictionary scrambleDictionary)
+        public ScrambleSolver(IScrambleDictionary scrambleDictionary) : base(scrambleDictionary)
         {
             ProcessDictionary(scrambleDictionary);
         }
 
         #region IScrambleSolver Members
 
-        public IList<string> Solve(ScrambleBoard scrambleBoard)
+        public override IList<string> Solve(ScrambleBoard scrambleBoard)
         {
             _scrambleBoard = scrambleBoard;
             _possibleWords = new List<string>();
@@ -28,15 +28,6 @@ namespace ScrambleWithoutFriends
         }
 
         #endregion
-
-        private void ProcessDictionary(IScrambleDictionary dictionary)
-        {
-            _rootNode = new WordNode();
-            foreach (string word in dictionary.WordList)
-            {
-                ProcessNode(_rootNode, new Stack<char>(word.Trim()), new Stack<char>());
-            }
-        }
 
         private void BuildWordsStartingAt(int x, int y)
         {
@@ -99,6 +90,15 @@ namespace ScrambleWithoutFriends
                 wordNode.ChildNodes[nodeIndex] = new WordNode();
 
             ProcessNode(wordNode.ChildNodes[nodeIndex], remainingCharacters, processedCharacters);
+        }
+
+         private void ProcessDictionary(IScrambleDictionary dictionary)
+        {
+            _rootNode = new WordNode();
+            foreach (string word in dictionary.WordList)
+            {
+                ProcessNode(_rootNode, new Stack<char>(word.Trim()), new Stack<char>());
+            }
         }
     }
 }

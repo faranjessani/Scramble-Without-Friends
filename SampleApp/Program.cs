@@ -12,7 +12,7 @@ namespace SampleApp
             Console.WriteLine(app.Board);
             //foreach(var word in app.PossibleWords) Console.WriteLine(word);
             Console.WriteLine("Possible Words: {0}", app.PossibleWords.Count);
-            Console.ReadLine();
+            //Console.ReadLine();
         }
     }
 }

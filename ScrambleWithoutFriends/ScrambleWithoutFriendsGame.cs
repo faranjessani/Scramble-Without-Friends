@@ -11,9 +11,9 @@ namespace ScrambleWithoutFriends
 
         public ScrambleWithoutFriendsGame()
         {
-            _scrambleBoard = new ScrambleBoard(4, 4, new ScrambleBoardGenerator());
+            _scrambleBoard = new ScrambleBoard(4, 4, new StaticScrambleBoardGenerator());
             
-            _scrambleSolver = new ScrambleSolver(new ScrambleDictionary(".\\Dictionary\\en_US.dic"));
+            _scrambleSolver = new ScrambleSolver1(new ScrambleDictionary(".\\Dictionary\\en_US.dic"));
             _possibleWords = _scrambleSolver.Solve(_scrambleBoard);
         }
 

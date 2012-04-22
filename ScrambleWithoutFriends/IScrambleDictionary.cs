@@ -2,7 +2,7 @@
 
 namespace ScrambleWithoutFriends
 {
-    internal interface IScrambleDictionary
+    public interface IScrambleDictionary
     {
         IList<string> WordList { get; }
         void BuildDictionary(string dictionaryFile);

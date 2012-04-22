@@ -48,9 +48,12 @@
     <Compile Include="ScrambleBoardGenerator.cs" />
     <Compile Include="ScrambleDictionary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScrambleSolver1.cs" />
+    <Compile Include="ScrambleSolverBase.cs" />
     <Compile Include="ScrambleWithoutFriendsGame.cs" />
     <Compile Include="ScrambleBoard.cs" />
     <Compile Include="ScrambleSolver.cs" />
+    <Compile Include="StaticScrambleBoardGenerator.cs" />
     <Compile Include="WordNode.cs" />
   </ItemGroup>
   <ItemGroup>
