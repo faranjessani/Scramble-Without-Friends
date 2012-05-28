@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using ScrambleWithoutFriends.Board_Generators;
 
 namespace ScrambleWithoutFriends
 {
@@ -7,14 +7,16 @@ namespace ScrambleWithoutFriends
     {
         private readonly IList<string> _possibleWords;
         private readonly ScrambleBoard _scrambleBoard;
+        private readonly IScrambleBoardGenerator _scrambleBoardGenerator;
         private readonly IScrambleSolver _scrambleSolver;
-        private readonly ScrambleBoardGenerator _scrambleBoardGenerator;
 
         public ScrambleWithoutFriendsGame()
         {
-            _scrambleBoardGenerator = new ScrambleBoardGenerator();
+            _scrambleBoardGenerator = new VowelsInEachQuadrantBoardGenerator();
             _scrambleSolver = new ScrambleSolver();
-            _scrambleBoard = new ScrambleBoard(4, 4, _scrambleBoardGenerator);
+            _scrambleBoard = new ScrambleBoard(Settings.DefaultSettings.Default.DefaultLength,
+                                               Settings.DefaultSettings.Default.DefaultWidth,
+                                               _scrambleBoardGenerator);
             _possibleWords = _scrambleSolver.Solve(_scrambleBoard);
         }
 
