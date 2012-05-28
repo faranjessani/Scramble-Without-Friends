@@ -33,14 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Board Generators\VowelsInEachQuadrantBoardGenerator.cs" />
     <Compile Include="Settings\DefaultSettings.cs" />
     <Compile Include="Settings\DefaultSettings.Designer.cs">
@@ -48,13 +40,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>DefaultSettings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Extensions.cs" />
     <Compile Include="Interfaces\IScrambleBoardGenerator.cs" />
     <Compile Include="Interfaces\IScrambleDictionary.cs" />
     <Compile Include="Interfaces\IScrambleSolver.cs" />
     <Compile Include="Model\Move.cs" />
     <Compile Include="Board Generators\RandomBoardGenerator.cs" />
     <Compile Include="Settings\DefaultSettings1.cs" />
+    <Compile Include="Solvers\Solver 1\Extensions.cs" />
     <Compile Include="Solvers\Solver 1\ScrambleDictionary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScrambleWithoutFriendsGame.cs" />
@@ -77,7 +69,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
