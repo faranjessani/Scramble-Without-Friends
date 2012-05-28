@@ -43,7 +43,7 @@
     <Compile Include="Interfaces\IScrambleBoardGenerator.cs" />
     <Compile Include="Interfaces\IScrambleDictionary.cs" />
     <Compile Include="Interfaces\IScrambleSolver.cs" />
-    <Compile Include="Model\Move.cs" />
+    <Compile Include="Solvers\Solver 1\Move.cs" />
     <Compile Include="Board Generators\RandomBoardGenerator.cs" />
     <Compile Include="Settings\DefaultSettings1.cs" />
     <Compile Include="Solvers\Solver 1\Extensions.cs" />
